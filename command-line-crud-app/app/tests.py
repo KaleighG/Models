@@ -25,6 +25,7 @@ class TestAnime(TestCase):
         anime = Anime.objects.create(name="Attack On Titan")
         self.assertEqual(anime.name, "Attack On Titan")
         anime.name = "AOT"
+        anime.save()
         self.assertEqual(Anime.objects.get(name="AOT").name, "AOT")
 
     def test_find_anime_by_name(self):
