@@ -16,6 +16,12 @@ def create_anime(name):
 def all_animes():
     return Anime.objects.all()
 
+def filter_anime(name):
+    try: 
+        return Anime.objects.filter(name=name)
+    except ObjectDoesNotExist:
+        return None
+    
 def find_anime_by_name(name):
     try: 
         return Anime.objects.get(name=name)
