@@ -28,10 +28,11 @@ def find_anime_by_name(name):
     except ObjectDoesNotExist:
         return None
     
-def update_anime(name):
+def update_anime(name, newname):
     anime = find_anime_by_name(name)
-    anime.name = name
+    anime.name = newname
     anime.save()
+    return anime
 
 def delete_anime(name):
     anime = find_anime_by_name(name)
